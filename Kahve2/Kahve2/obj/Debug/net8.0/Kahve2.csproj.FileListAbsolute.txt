@@ -1,0 +1,14 @@
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\obj\Debug\net8.0\Kahve2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\obj\Debug\net8.0\Kahve2.AssemblyInfoInputs.cache
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\obj\Debug\net8.0\Kahve2.AssemblyInfo.cs
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\obj\Debug\net8.0\Kahve2.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\bin\Debug\net8.0\Kahve2.exe
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\bin\Debug\net8.0\Kahve2.deps.json
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\bin\Debug\net8.0\Kahve2.runtimeconfig.json
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\bin\Debug\net8.0\Kahve2.dll
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\bin\Debug\net8.0\Kahve2.pdb
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\obj\Debug\net8.0\Kahve2.dll
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\obj\Debug\net8.0\refint\Kahve2.dll
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\obj\Debug\net8.0\Kahve2.pdb
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\obj\Debug\net8.0\Kahve2.genruntimeconfig.cache
+C:\Users\yusuf\source\repos\Kahve2\Kahve2\obj\Debug\net8.0\ref\Kahve2.dll

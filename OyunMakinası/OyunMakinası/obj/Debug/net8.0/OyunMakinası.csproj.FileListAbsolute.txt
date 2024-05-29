@@ -1,0 +1,14 @@
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\bin\Debug\net8.0\OyunMakinası.exe
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\bin\Debug\net8.0\OyunMakinası.deps.json
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\bin\Debug\net8.0\OyunMakinası.runtimeconfig.json
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\bin\Debug\net8.0\OyunMakinası.dll
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\bin\Debug\net8.0\OyunMakinası.pdb
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\obj\Debug\net8.0\OyunMakinası.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\obj\Debug\net8.0\OyunMakinası.AssemblyInfoInputs.cache
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\obj\Debug\net8.0\OyunMakinası.AssemblyInfo.cs
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\obj\Debug\net8.0\OyunMakinası.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\obj\Debug\net8.0\OyunMakinası.dll
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\obj\Debug\net8.0\refint\OyunMakinası.dll
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\obj\Debug\net8.0\OyunMakinası.pdb
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\obj\Debug\net8.0\OyunMakinası.genruntimeconfig.cache
+C:\Users\yusuf\OneDrive\Masaüstü\Projeler\OyunMakinası\OyunMakinası\obj\Debug\net8.0\ref\OyunMakinası.dll

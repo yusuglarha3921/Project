@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;
 
 class Program
@@ -185,7 +185,7 @@ class Program
                     Console.WriteLine("Taş, Kağıt, Makas Oyunu: Taş için 1, Kağıt için 2, Makas için 3 seçin.");
                     int kullaniciSecim;
 
-                
+
                     while (!int.TryParse(Console.ReadLine(), out kullaniciSecim) || kullaniciSecim < 1 || kullaniciSecim > 3)
                     {
                         Console.WriteLine("Geçersiz giriş. Lütfen Taş için 1, Kağıt için 2, Makas için 3 seçin: ");
@@ -209,64 +209,110 @@ class Program
                     {
                         Console.WriteLine("Üzgünüz, kaybettiniz.");
                     }
-    
+
                     break;
 
                 case 6:
-                    Console.Clear();
-                    Console.WriteLine("Matematik Sorusu Oyunu");
-                    string[] islemler = { "+", "-", "*", "/" };
-                    int sayi1Mat = rnd.Next(1, 101);
-                    int sayi2Mat = rnd.Next(1, 101);
-                    string islem = islemler[rnd.Next(islemler.Length)];
-
-                    double sonucMat = 0;
-                    switch (islem)
+                    int zorluk = 1;
+                    bool devamEt = true;
+                    while (devamEt)
                     {
-                        case "+":
-                            sonucMat = sayi1Mat + sayi2Mat;
-                            break;
-                        case "-":
-                            sonucMat = sayi1Mat - sayi2Mat;
-                            break;
-                        case "*":
-                            sonucMat = sayi1Mat * sayi2Mat;
-                            break;
-                        case "/":
-                            sonucMat = Math.Round((double)sayi1Mat / sayi2Mat, 2);
-                            break;
-                    }
+                        Console.Clear();
+                        Console.WriteLine($"Matematik Sorusu Oyunu - Zorluk Seviyesi: {zorluk}");
 
-                    Console.Write($"Soru: {sayi1Mat} {islem} {sayi2Mat} = ? ");
-                    double kullaniciCevap;
-                    bool cevapAlindi = false;
-                    var timer = new Timer(_ =>
-                    {
-                        if (!cevapAlindi)
+                        int sayi1Mat = rnd.Next(1, 10 * zorluk);
+                        int sayi2Mat = rnd.Next(1, 10 * zorluk);
+                        string[] islemler = { "+", "-", "*", "/" };
+                        string islem = islemler[rnd.Next(islemler.Length)];
+
+                        double sonucMat = 0;
+                        switch (islem)
                         {
-                            Console.WriteLine("\nSüre doldu! Yanlış cevap.");
-                            Console.WriteLine($"Doğru cevap: {sonucMat}");
-                            Console.WriteLine("Yeni bir soru ister misiniz? [E/H]");
+                            case "+":
+                                sonucMat = sayi1Mat + sayi2Mat;
+                                break;
+                            case "-":
+                                sonucMat = sayi1Mat - sayi2Mat;
+                                break;
+                            case "*":
+                                sonucMat = sayi1Mat * sayi2Mat;
+                                break;
+                            case "/":
+                                sonucMat = Math.Round((double)sayi1Mat / sayi2Mat, 2);
+                                break;
                         }
-                    }, null, 15000, Timeout.Infinite);
 
-                    if (double.TryParse(Console.ReadLine(), out kullaniciCevap))
-                    {
-                        cevapAlindi = true;
-                        if (Math.Abs(kullaniciCevap - sonucMat) < 0.01)
+                        Console.Write($"Soru: {sayi1Mat} {islem} {sayi2Mat} = ? ");
+                        double kullaniciCevap;
+                        bool cevapAlindi = false;
+                        int kalanSure = 15;
+
+                        Timer timer = new Timer(_ =>
                         {
-                            Console.WriteLine("Tebrikler! Doğru cevap.");
+                            lock (Console.Out)
+                            {
+                                try
+                                {
+                                    if (!cevapAlindi)
+                                    {
+                                        kalanSure--;
+                                        Console.SetCursorPosition(0, Console.CursorTop);
+                                        Console.Write($"Kalan süre: {kalanSure} saniye  ");
+                                        if (kalanSure == 0)
+                                        {
+                                            timer.Dispose();
+                                            Console.WriteLine("\nSüre doldu! Yanlış cevap.");
+                                            Console.WriteLine($"Doğru cevap: {sonucMat}");
+                                            Console.WriteLine("Yeni bir soru ister misiniz? [E/H]");
+                                            if (Console.ReadLine().ToUpper() == "H")
+                                            {
+                                                devamEt = false;
+                                            }
+                                            zorluk = 1;
+                                            return;
+                                        }
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine($"Hata: {ex.Message}");
+                                    timer.Dispose();
+                                }
+                            }
+                        }, null, 1000, 1000);
+
+                        if (double.TryParse(Console.ReadLine(), out kullaniciCevap))
+                        {
+                            lock (Console.Out)
+                            {
+                                cevapAlindi = true;
+                                timer.Dispose();
+                                if (Math.Abs(kullaniciCevap - sonucMat) < 0.01)
+                                {
+                                    Console.WriteLine("Tebrikler! Doğru cevap.");
+                                    zorluk++;
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"Yanlış cevap. Doğru cevap: {sonucMat}");
+                                    zorluk = 1;
+                                }
+                            }
                         }
                         else
                         {
-                            Console.WriteLine($"Yanlış cevap. Doğru cevap: {sonucMat}");
+                            lock (Console.Out)
+                            {
+                                timer.Dispose();
+                            }
+                        }
+
+                        Console.WriteLine("Yeni bir soru ister misiniz? [E/H]");
+                        if (Console.ReadLine().ToUpper() == "H")
+                        {
+                            devamEt = false;
                         }
                     }
-                    else if (!cevapAlindi)
-                    {
-                        timer.Change(Timeout.Infinite, Timeout.Infinite);
-                    }
-
                     break;
 
                 case 0:
@@ -299,3 +345,4 @@ class Program
         } while (i != 0);
     }
 }
+

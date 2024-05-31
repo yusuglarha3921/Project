@@ -242,12 +242,12 @@ class Program
                                 break;
                         }
 
-                        Console.Write($"Soru: {sayi1Mat} {islem} {sayi2Mat} = ? ");
+                        Console.Write($"Soru: {sayi1Mat} {islem} {sayi2Mat} = ? \n");
                         double kullaniciCevap;
                         bool cevapAlindi = false;
                         int kalanSure = 15;
-
-                        Timer timer = new Timer(_ =>
+                        Timer timer = null;
+                     timer = new Timer(_ =>
                         {
                             lock (Console.Out)
                             {
@@ -257,10 +257,10 @@ class Program
                                     {
                                         kalanSure--;
                                         Console.SetCursorPosition(0, Console.CursorTop);
-                                        Console.Write($"Kalan süre: {kalanSure} saniye  ");
+                                        Console.Write( $"Kalan süre: {kalanSure} saniye  " );
                                         if (kalanSure == 0)
                                         {
-                                            timer.Dispose(); //hata alınan kısım
+                                            timer.Dispose();
                                             Console.WriteLine("\nSüre doldu! Yanlış cevap.");
                                             Console.WriteLine($"Doğru cevap: {sonucMat}");
                                             Console.WriteLine("Yeni bir soru ister misiniz? [E/H]");

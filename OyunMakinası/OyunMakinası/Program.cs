@@ -260,7 +260,7 @@ class Program
                                         Console.Write($"Kalan süre: {kalanSure} saniye  ");
                                         if (kalanSure == 0)
                                         {
-                                            timer.Dispose();
+                                            timer.Dispose(); //hata alınan kısım
                                             Console.WriteLine("\nSüre doldu! Yanlış cevap.");
                                             Console.WriteLine($"Doğru cevap: {sonucMat}");
                                             Console.WriteLine("Yeni bir soru ister misiniz? [E/H]");
